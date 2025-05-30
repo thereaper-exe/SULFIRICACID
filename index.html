@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница продукта: Серная кислота</title>
+    <link rel="stylesheet" type="text/css" href="/css/design.css">
+		<link rel="stylesheet" type="text/css" href="/css/modal.css">
+		<link rel="stylesheet" type="text/css" href="/css/modal-product.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans">
+    <header id="header" class="site-header">
+        <div class="header-top bg-black/70 text-white py-5" id="header-top">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="location flex items-center gap-2 text-sm" id="city-select">
+                    <i class="icon-location"></i>
+                    <img src="icons/map.png" style="width: 15px; height: 15px; margin-left: 0px;"><span>АСТАНА</span>
+                    <i class="icon-arrow-down"></i>
+                </div>
+                <div class="contact-info flex items-center gap-2 text-sm" id="contact-info">
+                    <i class="icon-email"></i>
+                    <span>Электронная почта:</span>
+                    <a href="mailto:vko_all@mail.ru" id="email-link" class="text-red-400 hover:underline" style="cursor: url('../cursors/link.cur'), auto;">vko_all@mail.ru</a>
+                </div>
+                <div class="phone-numbers flex items-center gap-4 text-sm" id="phone-numbers">
+                    <div class="phone flex items-center gap-2">
+                        <i class="icon-phone"></i>
+                        <span>+7 (708) 080-88-88</span> <!-- Нуржан -->
+                    </div>
+                    <div class="phone flex items-center gap-2">
+                        <i class="icon-phone"></i>
+                        <span>+7 (702) 504-44-19</span> <!-- Жамиля -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main py-12 border-b border-white/10" id="header-main">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center gap-4">
+                <a href="#" id="logo" class="logo flex items-center text-white text-decoration-none">
+                    <img src="icons/logo.png" alt="DATA ARMOR INC" class="h-12 mr-3">
+                    <span class="logo-text text-2xl font-bold">DATA ARMOR INC</span>
+                </a>
+
+                <div id="search-box" class="search-box flex flex-grow max-w-md mx-4">
+                    <input type="text" placeholder="Поиск по сайту" class="flex-grow p-2 bg-transparent border border-cyan-400 text-white rounded-l-md focus:outline-none">
+                    <button class="search-button bg-cyan-400 text-white px-4 rounded-r-md hover:bg-cyan-500 transition">
+                        <i class="icon-search"><img src="icons/search.png" style="width: 20px; height: 20px;"></i>
+                    </button>
+                </div>
+
+                <button id="order-button" class="btn btn-primary bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition">
+                    ОФОРМИТЬ ЗАЯВКУ
+                </button>
+
+                <div class="cart flex items-center text-white" id="shopping-cart">
+                    <i class="icon-cart"></i>
+                    <span class="cart-count bg-red-600 rounded-full px-2 py-1 ml-2">0</span>
+                </div>
+            </div>
+        </div>
+
+        <nav id="main-nav" class="main-navigation bg-black/90">
+            <ul class="nav-menu flex flex-col sm:flex-row justify-center list-none m-0 p-0">
+                <li class="nav-item active"><a href="html/company.html" class="nav-link block py-4 px-4 text-white text-decoration-none hover:text-red-400 hover:border-red-400 border border-transparent transition">О КОМПАНИИ</a></li>
+                <li class="nav-item"><a href="html/delivery.html" class="nav-link block py-4 px-4 text-white text-decoration-none hover:text-red-400 hover:border-red-400 border border-transparent transition">ДОСТАВКА</a></li>
+                <li class="nav-item"><a href="#" class="nav-link block py-4 px-4 text-white text-decoration-none hover:text-red-400 hover:border-red-400 border border-transparent transition" onclick="openModal()">КОНТАКТЫ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-page animate-fade-in" id="main-content">
+        <div class="container">
+            <div class="product-display">
+							<div class="product-image-gallery" id="product-image-container">
+								<div class="product-image-main relative">
+										<img src="/images/acid.jpg" alt="Бутылка с серной кислотой" id="product-image">
+										<div class="progress-bar-container">
+												<div class="progress-bar" id="progress-bar"></div>
+										</div>
+										<button class="pause-button" id="pause-button"></button>
+								</div>
+								<div class="product-image-thumbnails">
+										<img src="/images/acid.jpg" class="thumbnail active" data-index="0" alt="Preview 1">
+										<img src="/images/train2.png" class="thumbnail" data-index="1" alt="Preview 2">
+										<img src="/images/train.jpg" class="thumbnail" data-index="2" alt="Preview 3">
+								</div>
+						</div>
+						
+								<div class="product-info" id="product-info">
+									<h1 class="product-title" id="product-title">
+										Серная кислота 96% (реагент ACS, 95–98%)
+									</h1>
+									<p class="price" id="product-price">₸125000</p>
+									<p class="description" id="product-description">Сильный окислитель и дегидратирующее средство</p>
+									<div class="icons">
+										<img src="/icons/flask.png" alt="Колба" class="icon" title="Кислота">
+										<img src="/icons/molecule.png" alt="Молекула" class="icon" title="Молекула">
+										<img src="/icons/warning.png" alt="Предупреждение" class="icon" title="ОПАСНО!">
+									</div>
+									<div class="review-summary" id="review-summary">
+										<p class="stars" id="average-rating">★★★★★ 5.0</p>
+										<p class="review-count" id="review-count">На основе 29 отзывов</p>
+									</div>
+									<div class="tab-nav">
+										<button onclick="toggleTab('reviews-tab')" class="tab-button active">Отзывы</button>
+										<button onclick="toggleTab('questions-tab')" class="tab-button">Вопросы</button>
+								</div>
+									<div class="size-selector">
+										<label for="volume">Выберите объем:</label>
+										<div class="volume-buttons">
+											<button class="volume-btn active" onclick="selectSize('1ton', event)" data-size="1ton" title="Промышленный объем 1 тонна">
+												1 тонна<br><small id="price-1ton">₸120000</small>
+											</button>
+											<button class="volume-btn" onclick="selectSize('2ton', event)" data-size="2ton" title="Промышленный объем 2 тонны">
+												2 тонны<br><small id="price-2ton">₸240000</small>
+											</button>
+											<button class="volume-btn" onclick="selectSize('5ton', event)" data-size="5ton" title="Крупный промышленный объем 5 тонн">
+												5 тонн<br><small id="price-5ton">₸600000</small>
+											</button>
+											<button class="volume-btn" onclick="selectSize('10ton', event)" data-size="10ton" title="Масштабный промышленный объем 10 тонн">
+												10 тонн<br><small id="price-10ton">₸1200000</small>
+											</button>
+										</div>
+										
+									</div>
+								
+                    <p class="warning" id="product-warning">
+                        Высококоррозионное химическое вещество, используемое в металлообработке, очистке и производстве удобрений. Обращайтесь с крайней осторожностью. ВНИМАНИЕ! Цена указана с учётом НДС!
+                    </p>
+                    <ul class="specifications" id="product-specifications">
+                        <li><strong>CAS:</strong> 7664-93-9</li>
+                        <li><strong>Формула:</strong> H₂SO₄</li>
+                        <li><strong>Молекулярная масса:</strong> 98.08</li>
+                        <li><strong>Класс:</strong> Реагент</li>
+                    </ul>
+										<section class="protocol-section">
+											<div class="protocol-toggle" onclick="toggleProtocol()">
+												<span>▶ Показать протокол испытаний</span>
+											</div>
+											<div id="protocol-content" class="protocol-content">
+												<h3>Сводная информация</h3>
+												<ul>
+													<li><strong>H₂SO₄:</strong> 93.0% – 93.1%</li>
+													<li><strong>Железо (Fe):</strong> 0.001% – 0.0028%</li>
+													<li><strong>Остаток после прокаливания:</strong> 0.01%</li>
+													<li><strong>Оксиды азота (N₂O₅):</strong> 0.000005 – 0.000006%</li>
+													<li><strong>Хлориды (Cl):</strong> 0%</li>
+													<li><strong>Прозрачность:</strong> Соответствует</li>
+												</ul>
+												<div class="mt-4">
+													<a href="/files/Исследования.pdf" download class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+														Скачать протокол (PDF)
+													</a>
+												</div>
+											</div>
+										</section>
+                    <button class="add-to-cart" id="add-to-cart-btn" onclick="openModal()">
+											<img src="icons/cart.png" alt="Корзина" class="cart-icon"> Купить
+										</button>
+                    <p id="confirmation-message" class="confirmation-msg">✅ </p>
+                </div>
+            </div>
+						<section class="review-section" id="review-section">
+							<h2 class="section-title">Отзывы и вопросы клиентов</h2>
+							<div class="tab-nav">
+								<button class="tab-button active" data-tab="reviews">Отзывы</button>
+								<button class="tab-button" data-tab="questions">Вопросы</button>
+							</div>
+							<div class="filter-sort-group">
+								<div class="filter-item">
+									<label for="rating-filter">Рейтинг:</label>
+									<select id="rating-filter">
+										<option value="all">Все</option>
+										<option value="5">5 звезд</option>
+										<option value="4">4 звезды</option>
+										<option value="3">3 звезды</option>
+										<option value="2">2 звезды</option>
+										<option value="1">1 звезда</option>
+									</select>
+								</div>
+								<div class="filter-item">
+									<label><input type="checkbox" id="verified-filter"> Только проверенные покупатели</label>
+								</div>
+								<div class="filter-item">
+									<label for="sort-order">Сортировка:</label>
+									<select id="sort-order">
+										<option value="newest">Новейшие</option>
+										<option value="oldest">Старейшие</option>
+										<option value="highest">Высокий рейтинг</option>
+										<option value="lowest">Низкий рейтинг</option>
+									</select>
+								</div>
+							</div>
+							<div id="reviews-tab" class="tab-content active">
+								<div class="review-list" id="reviews-list"></div>
+								<div class="pagination" id="reviews-pagination"></div>
+							</div>
+							<div id="questions-tab" class="tab-content">
+								<div class="filter-item">
+									<label><input type="checkbox" id="answered-filter"> Только с ответами</label>
+								</div>
+								<div class="review-list" id="questions-list"></div>
+								<div class="pagination" id="questions-pagination"></div>
+							</div>
+						</section>
+        </div>
+    </main>
+
+		<div id="contactModal" class="modal">
+			<div class="modal-content">
+				<span class="modal-close" onclick="closeModal()">×</span>
+				<h2 class="modal-title">Контакты</h2>
+				<div class="contact-list">
+					<div class="contact-item">
+						<img src="icons/men.png" alt="Мужчина" class="contact-icon person-icon">
+						<span>Нуржан: <a href="tel:+77080808888">+7 (708) 080-88-88
+							<img src="icons/phone.png" alt="Телефон" class="contact-icon phone-icon">
+						</a>
+					</span>
+						<a href="https://wa.me/77080808888" target="_blank" class="whatsapp-link">
+							<img src="icons/whatsapp.png" alt="WhatsApp" class="contact-icon whatsapp-icon"> WhatsApp
+						</a>
+					</div>
+					<div class="contact-item">
+						<img src="icons/women.png" alt="Женщина" class="contact-icon person-icon">
+						<span>Жамиля: <a href="tel:+77025044419">+7 (702) 504-44-19
+							<img src="icons/phone.png" alt="Телефон" class="contact-icon phone-icon">
+						</a>
+					</span>
+						<a href="https://wa.me/77025044419" target="_blank" class="whatsapp-link">
+							<img src="icons/whatsapp.png" alt="WhatsApp" class="contact-icon whatsapp-icon"> WhatsApp
+						</a>
+					</div>
+					<div class="contact-item">
+						<img src="icons/mail.png" alt="Email" style="width: 30px; height: 30px;">
+						<span>Email: <a href="mailto:vko_all@mail.ru">vko_all@mail.ru</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="product-image-modal" class="product-image-modal">
+        <div class="product-image-modal__content" onclick="event.stopPropagation()">
+            <span class="product-image-modal__close" onclick="closeProductImageModal()"></span>
+            <img id="product-image-modal-img" src="" alt="Просмотр" class="product-image-modal__image">
+            <div class="modal-counter" id="modal-counter"></div>
+            <div class="modal-nav">
+                <button class="modal-arrow" onclick="prevImage(event)">←</button>
+                <button class="modal-arrow" onclick="nextImage(event)">→</button>
+            </div>
+        </div>
+    </div>
+		
+
+<script src="javascript/script.js"></script>
+<script src="javascript/modal-product.js"></script>
+<script src="javascript/modal.js"></script>
+<script src="javascript/review.js"></script>
+</body>
+</html>

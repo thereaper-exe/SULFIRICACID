@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О компании — Data Armor INC</title>
+  <link rel="stylesheet" href="/css/design.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: #0f172a;
+      color: white;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      z-index: -1;
+      animation: pulse 10s infinite;
+    }
+
+    .hero img {
+      height: 120px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+      animation: slideDown 1.5s ease-out;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 0;
+      background: linear-gradient(45deg, #10b981, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 1.5rem auto;
+      color: #d1d5db;
+      animation: fadeIn 2.5s ease-out;
+    }
+
+    .btn-enter {
+      padding: 0.75rem 2rem;
+      background: linear-gradient(45deg, #10b981, #34d399);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+      animation: fadeIn 3s ease-out;
+    }
+
+    .btn-enter:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+    }
+    .content {
+      padding: 5rem 2rem;
+      background: #1e293b;
+      position: relative;
+    }
+
+    .content h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #10b981;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .content p {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #d1d5db;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .achievements {
+      padding: 3rem 2rem;
+      background: #111827;
+      text-align: center;
+    }
+
+    .achievements h2 {
+      font-size: 2rem;
+      color: #10b981;
+      margin-bottom: 2rem;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .achievement-card {
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .achievement-card h3 {
+      font-size: 1.5rem;
+      color: #34d399;
+      margin-bottom: 0.5rem;
+    }
+
+    .achievement-card p {
+      font-size: 1rem;
+      color: #d1d5db;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #374151;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(45deg, #10b981, #34d399);
+      transition: width 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .content h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero" id="home">
+    <canvas id="particles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+    <img src="/icons/logo.png" alt="Data Armor INC">
+    <h1>Data Armor INC</h1>
+    <p>Ваш надежный партнер в поставке химических реагентов и промышленных решений с международными стандартами качества и логистикой по всей стране.</p>
+    <a href="/index.html"><button class="btn-enter">Вернуться на главную</button></a>
+  </section>
+
+  <section class="content" id="about">
+    <h2>О нас</h2>
+    <p>Data Armor INC — лидер в поставке серной кислоты, щелочей и других неорганических соединений на территории СНГ. Мы гарантируем стабильность поставок, соответствие продукции ГОСТ и международным стандартам, а также полный цикл логистики и поддержки клиентов.</p>
+    <p>Нашими партнерами являются крупные металлургические и химические предприятия, научные лаборатории, а также малые и средние производственные компании.</p>
+    <p>Наши ценности: честность, безопасность, экологическая ответственность и индивидуальный подход к каждому клиенту.</p>
+  </section>
+
+  <section class="achievements">
+    <h2>Наши достижения</h2>
+    <div class="achievement-grid">
+      <div class="achievement-card">
+        <h3>10+ лет</h3>
+        <p>Опыта в поставке химических реагентов</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 85%;"></div>
+        </div>
+      </div>
+      <div class="achievement-card">
+        <h3>500+ клиентов</h3>
+        <p>Доверяют нам по всему СНГ</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 70%;"></div>
+        </div>
+      </div>
+      <div class="achievement-card">
+        <h3>100% качества</h3>
+        <p>Сертифицированная продукция</p>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 95%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    if (window.location.hash === "#about") {
+      document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particlesArray = [];
+    const numberOfParticles = 50;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 5 + 1;
+        this.speedX = Math.random() * 3 - 1.5;
+        this.speedY = Math.random() * 3 - 1.5;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.2) this.size -= 0.1;
+      }
+
+      draw() {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+        if (particlesArray[i].size <= 0.2) {
+          particlesArray.splice(i, 1);
+          i--;
+          particlesArray.push(new Particle());
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+
+    const progressBars = document.querySelectorAll('.progress-fill');
+    window.addEventListener('scroll', () => {
+      progressBars.forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          bar.style.width = bar.getAttribute('style').match(/\d+%/)[0];
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
