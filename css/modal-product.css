@@ -121,7 +121,7 @@
 
 .pause-button.paused::before {
   content: '';
-  background-image: url('/icons/continue.png');
+  background-image: url('../icons/continue.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
