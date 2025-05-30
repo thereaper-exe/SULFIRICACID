@@ -46,7 +46,7 @@ body {
 /* ========================================================================== */
 
 .site-header {
-  background: url('/icons/background.png') center center no-repeat;
+  background: url('../icons/background.png') center center no-repeat;
   background-size: cover;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
