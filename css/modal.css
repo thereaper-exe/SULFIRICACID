@@ -188,7 +188,7 @@
 
 @media (max-width: 480px) {
   .modal-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .modal-content {
@@ -196,7 +196,7 @@
   }
 
   .contact-item {
-    font-size: 1rem;
+    font-size: 1.5rem;
     gap: 0.4rem;
   }
 }
