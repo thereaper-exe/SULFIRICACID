@@ -228,7 +228,7 @@
   content: '';
   width: 24px;
   height: 24px;
-  background-image: url('/icons/close.png');
+  background-image: url('../icons/close.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
