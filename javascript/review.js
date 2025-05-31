@@ -350,24 +350,6 @@ const questions = [
 		parent_id: 7,
 		created_at: '2025-05-08',
 	},
-	{
-		id: 9,
-		user_name: 'Жанар',
-		title: 'Проблемы с доставкой',
-		text: 'Почему доставка задержалась?',
-		is_question: true,
-		parent_id: null,
-		created_at: '2025-05-09',
-	},
-	{
-		id: 10,
-		user_name: 'Поддержка',
-		title: 'Re: Проблемы с доставкой',
-		text: 'Извините за задержку, свяжитесь с нами.',
-		is_question: false,
-		parent_id: 9,
-		created_at: '2025-05-10',
-	},
 ]
 
 function filterAndSortData(type, page) {
