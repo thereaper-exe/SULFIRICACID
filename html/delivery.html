@@ -5,81 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Доставка | DATA ARMOR INC</title>
     <link rel="stylesheet" type="text/css" href="../css/delivery.css">
-		<link rel="stylesheet" type="text/css" href="../css/design.css">
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="../css/design.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="font-sans">
-    <header id="header" class="site-header">
-        <div class="header-top bg-black/70 text-white py-5" id="header-top">
-            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <div class="location flex items-center gap-2 text-sm" id="city-select">
-                    <i class="icon-location"></i>
-                    <img src="../icons/map.png" style="width: 15px; height: 15px; margin-left: 0px;"><span>АСТАНА</span>
-                    <i class="icon-arrow-down"></i>
-                </div>
-                <div class="contact-info flex items-center gap-2 text-sm" id="contact-info">
-                    <i class="icon-email"></i>
-                    <span>Электронная почта:</span>
-                    <a href="mailto:vko_all@mail.ru" id="email-link" class="text-red-400 hover:underline" style="cursor: url('../cursors/link.cur'), auto;">vko_all@mail.ru</a>
-                </div>
-                <div class="phone-numbers flex items-center gap-4 text-sm" id="phone-numbers">
-                    <div class="phone flex items-center gap-2">
-                        <i class="icon-phone"></i>
-                        <span>+7 (708) 080-88-88</span>
-                    </div>
-                    <div class="phone flex items-center gap-2">
-                        <i class="icon-phone"></i>
-                        <span>+7 (702) 504-44-19</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+	<header class="site-header">
+		<div class="container header-container">
+				<div class="header-top">
+						<a href="#" class="logo">
+								<img src="../icons/logo.png" alt="DATA ARMOR INC">
+								<span class="logo-text">DATA ARMOR INC</span>
+						</a>
+						<button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+						<div class="contact-details">
+								<div class="contact-item">
+										<img src="../icons/map.png" alt="Location">
+										<span style="font-size: 1rem">АСТАНА</span>
+								</div>
+								<div class="contact-item">
+										<img src="../icons/mail.png" alt="Email">
+										<a href="mailto:vko_all@mail.ru" style="font-size: 1rem">vko_all@mail.ru</a>
+								</div>
+								<div class="contact-item">
+									<img src="../icons/phone.png" alt="Phone">
+									<a href="tel:+77080808888" style="font-size: 1rem">+7 (708) 080-88-88</a>
+								</div>
+								<div class="contact-item">
+									<img src="../icons/phone.png" alt="Phone">
+									<a href="tel:+77025044419" style="font-size: 1rem">+7 (702) 504-44-19</a>
+								</div>
+						</div>
+				</div>
+				<nav class="nav-menu">
+						<li class="nav-item active"><a href="../html/company.html" class="nav-link">О КОМПАНИИ</a></li>
+						<li class="nav-item"><a href="#" class="nav-link">ДОСТАВКА</a></li>
+						<li class="nav-item"><a href="#" class="nav-link" onclick="openModal()">КОНТАКТЫ</a></li>
+						<li class="nav-item"><button class="btn-order" onclick="openModal()">ОФОРМИТЬ ЗАЯВКУ</button></li>
+				</nav>
+		</div>
+</header>
 
-        <div class="header-main py-12 border-b border-white/10" id="header-main">
-            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center gap-4">
-                <a href="#" id="logo" class="logo flex items-center text-white text-decoration-none">
-                    <img src="../icons/logo.png" alt="DATA ARMOR INC" class="h-12 mr-3">
-                    <span class="logo-text text-2xl font-bold">DATA ARMOR INC</span>
-                </a>
 
-                <div id="search-box" class="search-box flex flex-grow max-w-md mx-4">
-                    <input type="text" placeholder="Поиск по сайту" class="flex-grow p-2 bg-transparent border border-cyan-400 text-white rounded-l-md focus:outline-none">
-                    <button class="search-button bg-cyan-400 text-white px-4 rounded-r-md hover:bg-cyan-500 transition">
-                        <i class="icon-search"><img src="../icons/search.png" style="width: 20px; height: 20px;"></i>
-                    </button>
-                </div>
-
-                <button id="order-button" class="btn btn-primary bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition" onclick="openModal()">
-                    ОФОРМИТЬ ЗАЯВКУ
-                </button>
-
-                <div class="cart flex items-center text-white" id="shopping-cart">
-                    <i class="icon-cart"></i>
-                    <span class="cart-count bg-red-600 rounded-full px-2 py-1 ml-2">0</span>
-                </div>
-            </div>
-        </div>
-
-        <nav id="main-nav" class="main-navigation bg-black/90">
-            <ul class="nav-menu flex flex-col sm:flex-row justify-center list-none m-0 p-0">
-                <li class="nav-item"><a href="../html/company.html" class="nav-link block py-4 px-4 text-white text-decoration-none hover:text-red-400 hover:border-red-400 border border-transparent transition">О КОМПАНИИ</a></li>
-                <li class="nav-item active"><a href="#" class="nav-link block py-4 px-4 text-red-400 border-red-400 border text-decoration-none transition">ДОСТАВКА</a></li>
-                <li class="nav-item"><a href="#" class="nav-link block py-4 px-4 text-white text-decoration-none hover:text-red-400 hover:border-red-400 border border-transparent transition" onclick="openModal()">КОНТАКТЫ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="delivery-page animate-fade-in" id="main-content">
-        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-					<h1 class="section-title text-3xl font-bold text-white mb-8 text-center">Доставка продукции</h1>
-            <div class="delivery-content bg-white shadow-md rounded-lg p-8">
-                <p class="text-lg text-gray-700 mb-6">
+    <main class="delivery-page animate-fade-in" id="main-content" role="main">
+        <div class="container">
+            <h1 class="section-title" style="color: white;">Доставка продукции</h1>
+            <div class="delivery-content">
+                <p class="delivery-text">
                     Мы предлагаем надежную и гибкую доставку химической продукции, включая серную кислоту и другие реагенты, в любые регионы Казахстана и за его пределы. Наша цель — обеспечить ваш бизнес стабильными поставками высококачественных материалов с минимальными затратами времени и ресурсов.
                 </p>
 
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4">Условия доставки</h2>
-                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                <h2 class="section-subtitle">Условия доставки</h2>
+                <ul class="delivery-list">
                     <li><strong>Гибкость:</strong> Доставка осуществляется в любые регионы по согласованной стоимости, рассчитанной индивидуально в зависимости от объема заказа и расстояния.</li>
                     <li><strong>Скорость:</strong> Стандартная доставка в пределах Астаны и Алматы занимает 1–2 рабочих дня. Для других регионов Казахстана — 3–5 рабочих дней. Международные поставки согласовываются отдельно.</li>
                     <li><strong>Безопасность:</strong> Все химические вещества транспортируются в соответствии с международными стандартами безопасности, с использованием сертифицированной упаковки.</li>
@@ -87,46 +64,44 @@
                     <li><strong>Гарантия качества:</strong> Мы гарантируем, что продукция сохраняет свои свойства благодаря строгому контролю на всех этапах транспортировки.</li>
                 </ul>
 
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4">Дополнительные возможности</h2>
-                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                <h2 class="section-subtitle">Дополнительные возможности</h2>
+                <ul class="delivery-list">
                     <li><strong>Долгосрочные контракты:</strong> Заключите контракт на регулярные поставки и получите скидки до 15% на крупные объемы.</li>
                     <li><strong>Консультации:</strong> Наши специалисты помогут выбрать оптимальный объем и метод доставки, исходя из ваших потребностей.</li>
                     <li><strong>Отслеживание:</strong> Предоставляем трекинг для всех заказов, чтобы вы всегда знали, где находится ваша продукция.</li>
                 </ul>
 
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4">Как оформить доставку?</h2>
-                <p class="text-gray-700 mb-6">
-                    Свяжитесь с нами по телефону <a href="tel:+77080808888" class="text-sky-500 hover:underline">+7 (708) 080-88-88</a> (Нуржан) или <a href="tel:+77025044419" class="text-sky-500 hover:underline">+7 (702) 504-44-19</a> (Жамиля), через <a href="https://wa.me/77080808888" class="text-sky-500 hover:underline">WhatsApp</a> или по электронной почте <a href="mailto:vko_all@mail.ru" class="text-sky-500 hover:underline">vko_all@mail.ru</a>. Мы оперативно ответим на ваши вопросы, обсудим детали заказа и предложим наилучшие условия для вашего бизнеса.
+                <h2 class="section-subtitle">Как оформить доставку?</h2>
+                <p class="delivery-text">
+                    Свяжитесь с нами по телефону <a href="tel:+77080808888" class="delivery-link">+7 (708) 080-88-88</a> (Нуржан) или <a href="tel:+77025044419" class="delivery-link">+7 (702) 504-44-19</a> (Жамиля), через <a href="https://wa.me/77080808888" class="delivery-link">WhatsApp</a> или по электронной почте <a href="mailto:vko_all@mail.ru" class="delivery-link">vko_all@mail.ru</a>. Мы оперативно ответим на ваши вопросы, обсудим детали заказа и предложим наилучшие условия для вашего бизнеса.
                 </p>
 
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4">Почему выбирают нас?</h2>
-                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                <h2 class="section-subtitle">Почему выбирают нас?</h2>
+                <ul class="delivery-list">
                     <li><strong>Надежность:</strong> Более 5 лет успешных поставок по Казахстану и СНГ.</li>
                     <li><strong>Гибкость:</strong> Индивидуальный подход к каждому клиенту, от малого бизнеса до крупных предприятий.</li>
                     <li><strong>Прозрачность:</strong> Четкие сроки, фиксированная стоимость, никаких скрытых платежей.</li>
                 </ul>
 
-                <p class="text-lg text-gray-700">
+                <p class="delivery-text">
                     Для получения дополнительной информации или уточнения условий поставки, пожалуйста, свяжитесь с нами. Мы с радостью поможем вашему бизнесу процветать!
                 </p>
 
-                <div class="mt-8 text-center">
-                    <button onclick="openModal()" class="btn btn-primary bg-sky-500 text-white px-6 py-3 rounded-md hover:bg-sky-600 transition">
-                        Связаться с нами
-                    </button>
+                <div class="delivery-button-container">
+                    <button onclick="openModal()" class="btn-primary">Связаться с нами</button>
                 </div>
             </div>
         </div>
     </main>
 
-    <div id="contactModal" class="modal">
+    <div id="contactModal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">×</span>
-            <h2 class="modal-title">Контакты</h2>
+            <span class="modal-close" onclick="closeModal()" aria-label="Close modal">×</span>
+            <h2 class="modal-title" id="modal-title">Контакты</h2>
             <div class="contact-list">
                 <div class="contact-item">
                     <img src="../icons/men.png" alt="Мужчина" class="contact-icon person-icon">
-                    <span>Нуржан: <a href="tel:+77080808888">+7 (708) 080-88-88
+                    <span>Нуржан: <a href="tel:+77080808888" class="contact-link">+7 (708) 080-88-88
                         <img src="../icons/phone.png" alt="Телефон" class="contact-icon phone-icon">
                     </a></span>
                     <a href="https://wa.me/77080808888" target="_blank" class="whatsapp-link">
@@ -135,7 +110,7 @@
                 </div>
                 <div class="contact-item">
                     <img src="../icons/women.png" alt="Женщина" class="contact-icon person-icon">
-                    <span>Жамиля: <a href="tel:+77025044419">+7 (702) 504-44-19
+                    <span>Жамиля: <a href="tel:+77025044419" class="contact-link">+7 (702) 504-44-19
                         <img src="../icons/phone.png" alt="Телефон" class="contact-icon phone-icon">
                     </a></span>
                     <a href="https://wa.me/77025044419" target="_blank" class="whatsapp-link">
@@ -143,13 +118,14 @@
                     </a>
                 </div>
                 <div class="contact-item">
-                    <img src="../icons/mail.png" alt="Email" style="width: 30px; height: 30px;">
-                    <span>Email: <a href="mailto:vko_all@mail.ru">vko_all@mail.ru</a></span>
+                    <img src="../icons/mail.png" alt="Email" class="contact-icon">
+                    <span>Email: <a href="mailto:vko_all@mail.ru" class="contact-link">vko_all@mail.ru</a></span>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="../javascript/modal.js"></script>
+    <script src="../javascript/modal-product.js"></script>
 </body>
-<script src="../javascript/modal.js"></script>
-<script src="../javascript/modal-product.js"></script>
 </html>
