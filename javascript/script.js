@@ -13,6 +13,10 @@ const prices = {
 	},
 }
 
+document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+	document.querySelector('.nav-menu').classList.toggle('active')
+})
+
 let currentPurchaseType = 'one-time'
 
 function toggleProtocol() {
